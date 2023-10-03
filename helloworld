@@ -1,2 +1,23 @@
-echo "Hello World Here"
-ll -shd
+#! /usr/bin/env bash
+
+NUME3="gigi"
+
+declare -a nume
+nume=("ion" "gigi" "vasile")
+
+# comment
+if [[ ${#} -ge 2 ]]; then
+echo "Hello World Here ${1}, '${2}', $NUME3 made by $0"
+
+else 
+    echo "Error"
+fi
+
+for n in "${nume[@]}"; do
+    echo "Hello world $n"
+done
+
+
+curl "https://en.wikipedia.org/wiki/Python_(genus)" | grep -Eo 'title="Python [A-Za-z]+' | wc -l > species.txt
+
+
